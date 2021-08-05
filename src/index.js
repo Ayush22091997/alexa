@@ -4,6 +4,7 @@ const userRouter = require('./routers/user')
 const balanceRouter = require('./routers/balance')
 const notificationRouter = require('./routers/notifications')
 const transactionRouter = require('./routers/transactions')
+const rateRouter=require('./routers/interestRate');
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -22,6 +23,7 @@ const port = process.env.PORT || 3000
 
 app.use(express.json())
 app.use(userRouter)
+app.use(rateRouter)
 app.use(balanceRouter)
 app.use(notificationRouter)
 app.use(transactionRouter)
@@ -44,3 +46,4 @@ app.listen(port, () => {
 // }
 
 // main()
+
