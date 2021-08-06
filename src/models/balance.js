@@ -13,6 +13,14 @@ const Balance = mongoose.model('Balance', {
         type: Number,
         required: true
     },
+    leftBalanceInvested: {
+        type: Boolean,
+        default:false
+    },
+    leftBalanceInvestedAccount: {
+        type:String,
+        default:"Not Invested"
+    },
     currency:{
         type:String,
         default: "dollar"

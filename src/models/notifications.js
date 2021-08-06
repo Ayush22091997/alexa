@@ -1,9 +1,17 @@
 const mongoose = require('mongoose')
 
 const Notifications = mongoose.model('Notifications', {
-    notification: {
-        type: String,
-        required: true,
+    place:{
+        type:String,
+        required:true
+    },
+    date:{
+        type:Date,
+        required:true
+    },
+    handled:{
+        type:Boolean,
+        default:false
     },
     owner: {
         type: mongoose.Schema.Types.ObjectId,

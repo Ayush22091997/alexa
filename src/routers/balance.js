@@ -44,7 +44,7 @@ router.get('/balance/:id', auth, async (req, res) => {
 
 router.patch('/balance/:id', auth, async (req, res) => {
     const updates = Object.keys(req.body)
-    const allowedUpdates = ['currentBalance', 'averageBalance','leftBalancePerMonth'];
+    const allowedUpdates = ['currentBalance', 'averageBalance','leftBalancePerMonth','leftBalanceInvested','leftBalanceInvestedAccount'];
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
 
     if (!isValidOperation) {
