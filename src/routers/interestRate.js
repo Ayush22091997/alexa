@@ -16,9 +16,10 @@ router.post('/rate', auth, async (req, res) => {
     }
 })
 
-router.get('/rate', auth, async (req, res) => {
+router.get('/rate/:account', auth, async (req, res) => {
     try {
-        const rate=await interestRate.find({name:req.body.name});
+        console.log(req.params.account);
+        const rate=await interestRate.find({name:req.params.account});
         res.send(rate)
     } catch (e) {
         res.status(500).send()
