@@ -42,7 +42,7 @@ router.get('/notifications/:id', auth, async (req, res) => {
     }
 })
 
-router.patch('/notifications/:id', auth, async (req, res) => {
+router.put('/notifications/:id', auth, async (req, res) => {
     const updates = Object.keys(req.body)
     const allowedUpdates = ['place','Date','handled']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))

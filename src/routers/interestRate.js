@@ -26,9 +26,9 @@ router.get('/rate/:account', auth, async (req, res) => {
     }
 })
 
-router.patch('/changeRate', auth, async (req, res) => {
+router.put('/changeRate', auth, async (req, res) => {
     const updates = Object.keys(req.body)
-    const allowedUpdates = ['rate']
+    const allowedUpdates = ['rate','name']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
 
     if (!isValidOperation) {
