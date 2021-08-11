@@ -4,6 +4,7 @@ const userRouter = require('./routers/user')
 const balanceRouter = require('./routers/balance')
 const notificationRouter = require('./routers/notifications')
 const transactionRouter = require('./routers/transactions')
+const paymentsRouter = require('./routers/paymentNotifications')
 const rateRouter=require('./routers/interestRate');
 
 const app = express()
@@ -27,6 +28,7 @@ app.use(rateRouter)
 app.use(balanceRouter)
 app.use(notificationRouter)
 app.use(transactionRouter)
+app.use(paymentsRouter)
 
 app.listen(port, () => {
     console.log('Server is up on port ' + port)

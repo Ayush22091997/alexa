@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken')
 const Balance = require('./balance')
 const Notifications = require('./notifications')
 const Transactions = require('./transactions')
+const Payments = require('./paymentNotifications')
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -55,6 +56,11 @@ userSchema.virtual('notifications', {
 })
 userSchema.virtual('transactions', {
     ref: 'Transactions',
+    localField: '_id',
+    foreignField: 'owner'
+})
+userSchema.virtual('payments', {
+    ref: 'Payments',
     localField: '_id',
     foreignField: 'owner'
 })
